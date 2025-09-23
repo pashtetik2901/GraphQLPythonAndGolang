@@ -1,0 +1,43 @@
+from ariadne import gql
+
+type_defs = gql("""
+    type User{
+        id: ID!
+        name: String!
+        email: String!
+        age: Int!
+    }
+    
+    type Post{
+        id: ID!
+        title: String!
+        content: String!
+        author: User!
+    }
+    
+    input UserInput{
+        name: String!
+        email: String!
+        age: Int!
+    }
+    
+    input PostInput{
+        title: String!
+        content: String!
+        authorId: ID!
+    }
+    
+    type Query{
+        users: [User]!
+        user(id: ID!): User!
+        posts: [Post]!
+        post(id: ID!): Post!
+    }    
+    
+    type Mutation{
+        createUser(input: UserInput): User!
+        updateUser(id: ID!, input: UserInput): User!
+        deleteUser(id: ID!): Boolean!
+        createPost(input: PostInput): Post!
+    }
+""")
