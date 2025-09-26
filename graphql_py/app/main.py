@@ -1,8 +1,8 @@
 from ariadne import make_executable_schema, load_schema_from_path
 from ariadne.asgi import GraphQL
-from app.schema import type_defs
-from  app.resolvers import resolver
-from app.database import engine, Base
+from graphql_py.app.schema import type_defs
+from graphql_py.app.resolvers import resolver
+from graphql_py.app.database import engine, Base
 
 Base.metadata.create_all(bind=engine)
 

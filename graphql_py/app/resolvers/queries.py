@@ -1,6 +1,6 @@
 from ariadne import convert_kwargs_to_snake_case, QueryType
-from app.models import Post, User
-from app.database import get_db
+from graphql_py.app.models import Post, User
+from graphql_py.app.database import get_db
 
 query = QueryType()
 

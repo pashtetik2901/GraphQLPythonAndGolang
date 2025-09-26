@@ -16,7 +16,7 @@ type Resolver struct {
 
 type mutationResolver struct{ *Resolver }
 type queryResolver struct{ *Resolver }
-type userResolver struct{ *Resolver }
+
 
 func (r *Resolver) Mutation() MutationResolver {
 	return &mutationResolver{r}

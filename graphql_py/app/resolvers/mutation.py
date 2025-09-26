@@ -1,6 +1,6 @@
 from ariadne import convert_kwargs_to_snake_case, MutationType
-from app.models import User, Post
-from app.database import get_db
+from graphql_py.app.models import User, Post
+from graphql_py.app.database import get_db
 
 mutation = MutationType()
 
